@@ -83,6 +83,16 @@
   (after-init . doom-modeline-mode)
   (doom-modeline-mode . display-battery-mode))
 
+;; Show markers about version control status for the current file
+(use-package diff-hl
+  :ensure t
+  :custom
+  (diff-hl-show-staged-changes nil)
+  :init
+  (add-hook 'dired-mode-hook 'diff-hl-dired-mode)
+  :config
+  (global-diff-hl-mode))
+
 (use-package evil-matchit
   :ensure t
   :config (global-evil-matchit-mode 1))
