@@ -87,6 +87,7 @@
 (use-package diff-hl
   :ensure t
   :custom
+  ;; if a hunk was already staged it won't show a marker
   (diff-hl-show-staged-changes nil)
   :init
   (add-hook 'dired-mode-hook 'diff-hl-dired-mode)
