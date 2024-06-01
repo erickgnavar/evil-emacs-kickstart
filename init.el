@@ -164,22 +164,15 @@
   (which-key-setup-minibuffer))
 
 ;; Completion at point support
-(use-package corfu
+(use-package company
   :ensure t
-  :custom
-  (corfu-cycle t)                ;; Enable cycling for `corfu-next/previous'
-  (corfu-auto t)                 ;; Enable auto completion
-  :bind (:map corfu-map
-              ("C-n" . corfu-next)
-              ("C-p" . corfu-previous))
   :init
-  (global-corfu-mode)
+  (setq company-idle-delay 0.1
+        company-tooltip-limit 10
+        company-minimum-prefix-length 3)
+  :hook (after-init . global-company-mode)
   :config
-  ;; make corfu play well with evil-mode
-  ;; https://github.com/minad/corfu/issues/12#issuecomment-869037519
-  (with-eval-after-load 'evil
-    (evil-make-overriding-map corfu-map)
-    (advice-add 'corfu--setup :after 'evil-normalize-keymaps)
-    (advice-add 'corfu--teardown :after 'evil-normalize-keymaps)))
+  (define-key company-active-map (kbd "C-n") 'company-select-next)
+  (define-key company-active-map (kbd "C-p") 'company-select-previous))
 
 ;;; init.el ends here.
