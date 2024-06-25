@@ -1,3 +1,4 @@
+;;; Package --- init file -*- lexical-binding: t -*-
 (setq inhibit-startup-message t)
 (setq default-directory (expand-file-name "~/"))
 
