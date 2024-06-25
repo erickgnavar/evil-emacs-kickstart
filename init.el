@@ -98,14 +98,11 @@
   :ensure t
   :config (global-evil-matchit-mode 1))
 
-(use-package evil-nerd-commenter
+(use-package evil-commentary
   :ensure t
   :after (evil)
   :config
-  ;; auto configure hotkeys for evil mode and not for emacs
-  (evilnc-default-hotkeys nil t)
-  ;; avoid to auto-setup of keybindings
-  (setq evilnc-use-comment-object-setup nil))
+  (evil-commentary-mode))
 
 (use-package markdown-mode
   :ensure t

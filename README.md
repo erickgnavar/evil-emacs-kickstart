@@ -50,4 +50,4 @@ All the actions are triggered by `<leader>` key which is `SPC`, space bar.
 | Create a new buffer                  | <kbd>SPC n</kbd>   | `evil-buffer-new`             |
 | Fuzzy search inside current buffer   | <kbd>SPC q</kbd>   | `consult-line`                |
 | Paste from killring(emacs clipboard) | <kbd>SPC y</kbd>   | `consult-yank-from-kill-ring` |
-| Comment code                         | <kbd>,,</kbd>      | `evilnc-comment-operator`     |
+| Comment code                         | <kbd>gc</kbd>      | `evil-commentary`             |
