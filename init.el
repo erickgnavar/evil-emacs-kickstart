@@ -1,5 +1,4 @@
-;;; Package --- init file -*- lexical-binding: t -*-
-(setq inhibit-startup-message t)
+;;; init.el --- Init file -*- lexical-binding: t -*-
 (setq default-directory (expand-file-name "~/"))
 
 ;; Change backups directory to emacs folder
